@@ -15,8 +15,8 @@ class CreatePlaylistsTracksTable extends Migration
     {
         Schema::create('playlist_tracks', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('playlist_id')->constrained();
-            $table->foreignId('service_id')->constrained();
+            $table->foreignId('playlist_id')->constrained()->onDelete('cascade');
+            $table->foreignId('service_id')->constrained()->onDelete('cascade');
             $table->string('track_id');
             $table->timestamps();
         });
