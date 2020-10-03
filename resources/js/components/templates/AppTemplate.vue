@@ -14,7 +14,7 @@
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-icon>
           <v-list-item-content v-if="item.title">
-            <a href="{{ item.route }}"><v-list-item-title>{{ item.title }}</v-list-item-title></a>
+            <a :href="item.route"><v-list-item-title>{{ item.title }}</v-list-item-title></a>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -30,6 +30,17 @@
     <v-main>
         
     </v-main>
+
+    <v-footer>
+      <v-row>
+        <v-col cols="4">
+          <a :href="url + 'privacy'">Privacy Policy</a>
+        </v-col>
+        <v-col cols="4">
+        </v-col>
+        <v-col cols="4">
+        </v-col>
+    </v-footer>
   </v-app>
 </template>
 
@@ -37,6 +48,7 @@
   export default {
     data: () => (
       { 
+        url: process.env.APP_URL,
         drawer: null,
         isHidden: false,
         items: [

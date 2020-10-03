@@ -21,3 +21,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+Route::get('/privacy', function() { return view('privacy'); });
