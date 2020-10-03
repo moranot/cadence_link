@@ -5,6 +5,7 @@ import '@mdi/font/css/materialdesignicons.css';
 import upperFirst from 'lodash/upperFirst';
 import camelCase from 'lodash/camelCase';
 import AppTemplate from './components/templates/AppTemplate';
+import VueCookieAcceptDecline from 'vue-cookie-accept-decline';
 
 Vue.use(Vuetify);
 
@@ -40,5 +41,6 @@ const app = new Vue({
     }),
     components: {
         'app-template': AppTemplate,
+        'vue-cookie-accept-decline': VueCookieAcceptDecline,
     }
 });

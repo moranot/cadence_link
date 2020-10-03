@@ -14,7 +14,7 @@
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-icon>
           <v-list-item-content v-if="item.title">
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
+            <a href="{{ item.route }}"><v-list-item-title>{{ item.title }}</v-list-item-title></a>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -37,7 +37,13 @@
   export default {
     data: () => (
       { 
-        drawer: null 
+        drawer: null,
+        isHidden: false,
+        items: [
+          { icon: '', title: 'Route 1', route: '#'},
+          { icon: '', title: 'Route 2', route: '#'},
+          { icon: '', title: 'Route 3', route: '#'}
+        ]
       }
     ),
   }
