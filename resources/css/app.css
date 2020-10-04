@@ -1,0 +1,7 @@
+.v-toolbar__content, .v-toolbar__extension {
+    padding: 0;
+}
+
+.v-sheet.v-toolbar:not(.v-sheet--outlined) {
+    padding: 0 14px;
+}
