@@ -10,34 +10,15 @@
     </head>
     <body>
         <div id="app">
-            <app-template></app-template>
-            <vue-cookie-accept-decline
-                :ref="'myPanel1'"
-                :elementId="'myPanel1'"
-                :debug="false"
-                :position="'bottom-left'"
-                :type="'floating'"
-                :disableDecline="false"
-                :transitionName="'slideFromBottom'"
-                :showPostponeButton="false"
-                @status="cookieStatus"
-                @clicked-accept="cookieClickedAccept"
-                @clicked-decline="cookieClickedDecline"
-            >
-                <div slot="postponeContent">
-                    &times;
-                </div>
-
-                <div slot="message">
-                    We use cookies to ensure you get the best experience on our website. <a href="https://cookiesandyou.com/" target="_blank">Learn More...</a>
-                </div>
-                <div slot="acceptContent">
-                    Accept
-                </div>
-                <div slot="declineContent">
-                    Decline
-                </div>
-            </vue-cookie-accept-decline>
+            <v-app>
+                <header-template></header-template>
+                <v-main>
+                    <v-content>
+                        @yield('content')
+                    <v-content>
+                </v-main>
+                <footer-template></footer-template>
+            </v-app>
         </div>
     </body>
 </html>

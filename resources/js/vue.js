@@ -4,18 +4,16 @@ import 'vuetify/dist/vuetify.min.css';
 import '@mdi/font/css/materialdesignicons.css';
 import upperFirst from 'lodash/upperFirst';
 import camelCase from 'lodash/camelCase';
-import AppTemplate from './components/templates/AppTemplate';
-import VueCookieAcceptDecline from 'vue-cookie-accept-decline';
 
 Vue.use(Vuetify);
 
-const requireBaseComponents = require.context(
-    './components/bases',
+const requireComponent = require.context(
+    './components/templates/',
     true,
-    /Base[A-Z]\w+\.(vue|js)$/
+    /[A-Z]\w+Template\.(vue|js)$/
 );
 
-requireBaseComponents.keys().forEach(fileName => {
+requireComponent.keys().forEach(fileName => {
     const componentConfig = requireComponent(fileName);
     const componentName = upperFirst(
         camelCase(
@@ -38,9 +36,5 @@ const app = new Vue({
         theme: {
             dark: true
         }
-    }),
-    components: {
-        'app-template': AppTemplate,
-        'vue-cookie-accept-decline': VueCookieAcceptDecline,
-    }
+    })
 });
