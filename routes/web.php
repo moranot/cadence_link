@@ -15,11 +15,22 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('welcome');
 });
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::group(['middleware' => 'guest'], function () {
+    Route::redirect('/user/{any}', '/auth/register')->where('any', '.*');
+});
 
-Route::get('/privacy', function() { return view('privacy'); });
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/user/account', [UserController::class, 'show'])->name('user.account');
+    Route::post('/user/delete', [UserController::class, 'delete'])->name('user.delete');
+});
+
+// Finds all files in app/resources/views/cms and adds route to them
+foreach (Storage::disk('views')->files('cms') as $file) {
+    $filename = explode('.', $filename);
+    Route::get('/'.$filename, function() { return view($filename); });
+}

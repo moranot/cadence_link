@@ -31,13 +31,12 @@
 <script>
   export default {
     data: function () {
-      return { 
-        url: process.env.APP_URL,
-        drawer: null,
+      return {
+        drawer: false,
         items: [
-          { icon: '', title: 'Route 1', route: '#'},
-          { icon: '', title: 'Route 2', route: '#'},
-          { icon: '', title: 'Route 3', route: '#'}
+          { icon: 'mdi-account', title: 'My Account', route: '/user/account'},
+          { icon: 'mdi-playlist-music', title: 'My Playlists', route: '/user/playlists'},
+          { icon: 'mdi-account-group', title: 'Friends', route: '/user/friends' }
         ]
       }
     }

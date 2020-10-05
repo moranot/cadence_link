@@ -5,3 +5,8 @@
 .v-sheet.v-toolbar:not(.v-sheet--outlined) {
     padding: 0 14px;
 }
+
+.v-application a {
+    color: #FFFFFF;
+    text-decoration: underline;
+}

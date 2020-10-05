@@ -24,6 +24,10 @@ return [
             'url' => env('AWS_URL'),
             'endpoint' => env('AWS_ENDPOINT'),
         ],
+        'views' => [
+            'driver' => 'local',
+            'root' => base_path('resource/views'),
+        ]
     ],
     'links' => [
         public_path('storage') => storage_path('app/public'),
