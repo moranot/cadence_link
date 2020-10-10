@@ -2,7 +2,7 @@
 
 namespace App\Models\Playlists;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Model;
 use App\Models\Playlists\Playlist;
 
 class PlaylistTrack extends Model

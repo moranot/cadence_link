@@ -2,7 +2,7 @@
 
 namespace App\Models\Services;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Model;
 
 class Service extends Model
 {

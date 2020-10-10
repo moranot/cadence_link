@@ -2,6 +2,6 @@
 
 @section('content')
 <div class="container">
-    <delete-user-template></delete-user-template>
+    <user-grid-template csrf="{{ csrf_token() }}"></user-grid-template>
 </div>
 @endsection
