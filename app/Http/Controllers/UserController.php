@@ -21,6 +21,16 @@ class UserController extends Controller
      * @return View
      */
     public function index()
+    { 
+        return view('admin.users.index')->with('model', self::MODEL);
+    }
+
+    /**
+     * Return all users.
+     * 
+     * @return Response
+     */
+    public function show()
     {
         $users = User::all();
         $headers = [];
@@ -40,7 +50,7 @@ class UserController extends Controller
         
         return response(json_encode(
             [
-                'users' => $users,
+                'models' => $users,
                 'headers' => $headers,
                 'statusMsg' => $this->getStatusMsg(
                     self::MODEL,
@@ -72,7 +82,7 @@ class UserController extends Controller
 
         return response(json_encode(
             [
-                'users' => User::all(), 
+                'models' => User::all(), 
                 'statusMsg' => $this->getStatusMsg(
                     self::MODEL,
                     __FUNCTION__,
@@ -101,7 +111,7 @@ class UserController extends Controller
 
         return response(json_encode(
             [
-                'users' => User::all(), 
+                'models' => User::all(), 
                 'statusMsg' => $this->getStatusMsg(
                     self::MODEL,
                     __FUNCTION__,
