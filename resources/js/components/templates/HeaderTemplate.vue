@@ -4,13 +4,13 @@
     <v-app-bar color="#033F63" app>
       <v-toolbar src="">
         <v-app-bar-nav-icon color="#02C39A" @click="drawer = !drawer"></v-app-bar-nav-icon>
-        <v-toolbar-title>MixLink</v-toolbar-title>
+        <v-toolbar-title>Cadence Link</v-toolbar-title>
       </v-toolbar>
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" app>
       <v-list-item>
         <v-list-item-content>
-          <v-list-item-title>MixLink</v-list-item-title>
+          <v-list-item-title>Cadence Link</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
       <v-divider></v-divider>
